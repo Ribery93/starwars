@@ -3,5 +3,7 @@ default:
   script:
     - mvn clean install
   only:
-    - $CI_PIPELINE_SOURCE == "merge_request_event"
-    - $CI_COMMIT_BRANCH
+    refs:
+      - branches
+    variables:
+      - $CI_PIPELINE_SOURCE == "merge_request_event"
