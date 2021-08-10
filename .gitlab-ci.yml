@@ -4,4 +4,4 @@ build:
   script:
     - mvn clean install
   only:
-    - branches
+    - merge_requests
