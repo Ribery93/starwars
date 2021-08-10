@@ -4,4 +4,5 @@ test:
   script:
     - mvn test
   only:
+    refs:
     - merge_requests
