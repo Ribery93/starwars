@@ -1,6 +1,7 @@
-image: rvancea/maven-chrome-jdk8:latest
-build:
-  stage: build
+default:
+  image: rvancea/maven-chrome-jdk8:latest
   script:
     - mvn clean install
-  only: [ merge_requests ]
+  only:
+    - $CI_PIPELINE_SOURCE == "merge_request_event"
+    - $CI_COMMIT_BRANCH
