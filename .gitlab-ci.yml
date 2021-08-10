@@ -3,6 +3,7 @@ build:
   stage: build
   script:
     - mvn clean install
-  only:
-    - branches
-    - merge_requests
+  only: [ merge_requests ]
+    except:
+      variables:
+        - $CI_COMMIT_REF_NAME =~ /^docs-/
