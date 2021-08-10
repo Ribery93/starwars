@@ -1,5 +1,5 @@
 image: rvancea/maven-chrome-jdk8:latest
-test:
+build:
   stage: build
   script:
     - mvn clean install
