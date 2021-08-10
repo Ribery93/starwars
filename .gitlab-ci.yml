@@ -2,8 +2,7 @@ default:
   image: rvancea/maven-chrome-jdk8:latest
   script:
     - mvn clean install
-  only:
-    refs:
-      - branches
+  only: [merge_requests]
+  except:
     variables:
-      - $CI_PIPELINE_SOURCE == "merge_request_event"
+      - $CI_COMMIT_REF_NAME =~ /^docs-/
