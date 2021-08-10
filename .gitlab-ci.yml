@@ -4,6 +4,3 @@ build:
   script:
     - mvn clean install
   only: [ merge_requests ]
-    except:
-      variables:
-        - $CI_COMMIT_REF_NAME =~ /^docs-/
