@@ -1,0 +1,7 @@
+image: rvancea/maven-chrome-jdk8:latest
+test:
+  stage: test
+  script:
+    - mvn test
+  only:
+    - merge_requests
