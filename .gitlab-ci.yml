@@ -1,8 +1,7 @@
 image: rvancea/maven-chrome-jdk8:latest
 test:
-  stage: test
+  stage: build
   script:
-    - mvn test
+    - mvn clean install
   only:
-    refs:
-    - merge_requests
+    -branches
