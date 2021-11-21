@@ -1,13 +1,13 @@
-package com.example.testeci;
+package br.com.starwars;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class TesteCiApplication {
+public class StarWarsApplication {
 
   public static void main(String[] args) {
-    SpringApplication.run(TesteCiApplication.class, args);
+    SpringApplication.run(StarWarsApplication.class, args);
   }
 
 }

@@ -1,8 +1,14 @@
-default:
+test_async:
+  stage: test
   image: rvancea/maven-chrome-jdk8:latest
   script:
-    - mvn clean install
-  only: [merge_requests]
-  except:
+    - echo "unit test running"
+    - echo $CI_MERGE_REQUEST_TARGET_BRANCH_NAME
+    - echo $CI_MERGE_REQUEST_ID
+    - echo $CI_MERGE_REQUEST_PROJECT_ID
+    - echo $CI_MERGE_REQUEST_PROJECT_PATH
+    - echo $CI_MERGE_REQUEST_PROJECT_URL
+    - echo $CI_MERGE_REQUEST_SOURCE_BRANCH_NAME
+  only:
     variables:
-      - $CI_COMMIT_REF_NAME =~ /^docs-/
+    - `$CI_PIPELINE_SOURCE == "push"`
